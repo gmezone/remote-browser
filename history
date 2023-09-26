@@ -1,0 +1,46 @@
+ 1  change me
+    2  ls
+    3  xvfb-run -a --server-args="-screen 0 1x1x24 -ac -nolisten tcp +extension RANDR" yarn serve
+    4  ls -lah
+    5  find / -iname=serve
+    6  find / -iname serve
+    7  ./chrome-dependencies-installer.sh
+    8  yarn install
+    9  npm install
+   10  xvfb-run -a --server-args="-screen 0 1x1x24 -ac -nolisten tcp +extension RANDR" yarn serve
+   11  yarn --version
+   12  yarn serve
+   13  xvfb-run -a --server-args="-screen 0 1x1x24 -ac -nolisten tcp +extension RANDR" yarn serve
+   14  node --require dotenv/config index.js
+   15  ls
+   16  ls -l
+   17  su -
+   18  apt install net-tools
+   19  ifconfig
+   20  apt install net-tools
+   21  apt install curl
+   22  sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+   23  nordvpn login
+   24  nordvpn connect
+   25  nordvpn login
+   26  nordvpn connect
+   27  nordvpn login
+   28  curl nordvpn://login?action=login&exchange_token=Mzc3MTZkMTMzZDMwOWZlMjBlOTZlMzNlY2E4YTAzMDUxZTlhNGY4MjNlZTRmNDcyM2ZmMDUwNDhlNGYwNWVlOA%3D%3D&status=done
+   29  nordvpn connect
+   30  nordvpn
+   31  nordvpn status
+   32  nordvpn login
+   33  nordvpn connect
+   34  nordvpn status
+   35  nordvpn connect
+   36  nordvpn login
+   37  nordvpn connect
+   38  sudo nordvpn login
+   39  nordvpn connect
+   40  sudo nordvpn login
+   41  sudo nordvpn connect
+   42  reboot
+   43  xvfb-run -a --server-args="-screen 0 1x1x24 -ac -nolisten tcp +extension RANDR" yarn serve
+   44  ifconfig
+   45  xvfb-run -a --server-args="-screen 0 1x1x24 -ac -nolisten tcp +extension RANDR" yarn serve
+  
