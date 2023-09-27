@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
-apt install xvfb \
+apt install -y xvfb \
 libxcomposite1 \
 libxcursor1 \
 libgbm1 \
