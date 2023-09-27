@@ -24,6 +24,7 @@ export default async (options) => {
 
   const browser = await puppeteer.launch({
     args: [
+      //hhhhh
       '--block-new-web-contents',
       '--disable-breakpad',
       '--disable-dev-shm-usage',
