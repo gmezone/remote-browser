@@ -11,6 +11,6 @@ const io = new Server(HttpServer)
 
 io.on('connect', StreamServer)
 
-HttpServer.listen(PORT, HOST)
+HttpServer.listen(PORT)
 
 console.log(`Listen on http://${HOST}:${PORT}`)
