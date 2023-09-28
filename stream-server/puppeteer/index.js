@@ -22,14 +22,14 @@ export default async (options) => {
 
   const height = Math.trunc(width / options.ratio)
 
-//  let conf = new Object();
-//  conf.vpnUser   = conf.vpnUSer   || 'vbTk73o2jxFYVXwvgrmL3JCH';
-//  conf.vpnPass   = conf.vpnPass   || 'qzEM4CgVayuU5v8LCWjKqknt';
-//  conf.vpnServer = conf.vpnServer || "https://ar51.nordvpn.com:89";
+  let conf = new Object();
+  conf.vpnUser   = conf.vpnUSer   || 'vbTk73o2jxFYVXwvgrmL3JCH';
+  conf.vpnPass   = conf.vpnPass   || 'qzEM4CgVayuU5v8LCWjKqknt';
+  conf.vpnServer = conf.vpnServer || "https://ar51.nordvpn.com:89";
 
   const browser = await puppeteer.launch({
     args: [
-    //   '--proxy-server='+conf.vpnServer ,
+      '--proxy-server='+conf.vpnServer ,
       '--block-new-web-contents',
       '--disable-breakpad',
       '--disable-dev-shm-usage',
@@ -64,10 +64,10 @@ export default async (options) => {
   })
 
   const page = (await browser.pages())[0]
-//    await page.authenticate({
-//            username: conf.vpnUser,
-//            password: conf.vpnPass,
- //       });
+  await page.authenticate({
+          username: conf.vpnUser,
+          password: conf.vpnPass,
+        });
 
   cdp(page)
 
