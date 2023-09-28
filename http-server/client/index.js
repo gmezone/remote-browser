@@ -9,7 +9,7 @@ const app = express()
 
 if (process.env.AUTH_ENABLE === 'true') {
   app.use(basicAuth({
-    users: (await import('./auth.js')).default,
+    users: (import('./auth.js')).default,
     challenge: true,
   }))
 }
