@@ -122,7 +122,8 @@ export default (socket) => {
       socket.emit(data.event, data)
     })
 
-    page.goto('https://redeem.microsoft.com/')
+    //page.goto('https://redeem.microsoft.com/')
+    page.goto('https://account.microsoft.com/billing/redeem?lang=he-IL')
   })
 
   socket.on('navigation', (url) => {
