@@ -55,7 +55,7 @@ export default async (options) => {
     defaultViewport: { width, height },
     executablePath: process.env.CHROMIUM_EXECUTE_PATH || undefined,
     // devtools: true,
-    headless: true,
+    headless: false,
     ignoreDefaultArgs: [
       '--disable-popup-blocking',
       '--enable-automation',
