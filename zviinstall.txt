@@ -1,0 +1,21 @@
+
+sudo  snap install curl
+curl -s https://deb.nodesource.com/setup_18.x | sudo bash
+
+sudo apt-get install -y nodejs
+sudo apt install git 
+
+sudo apt remove cmdtest
+sudo apt remove yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update
+sudo apt-get install yarn -y 
+
+git clone https://github.com/bepsvpt-me/remote-browser.git
+cd remote-browser/
+sudo ./chrome-dependencies-installer.sh
+ 
+cp .env.example .env
+yarn install
+xvfb-run -a --server-args="-screen 0 1x1x24 -ac -nolisten tcp +extension RANDR" yarn serve
