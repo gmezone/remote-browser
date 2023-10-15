@@ -32,6 +32,7 @@ export default () => {
 
   if (tServer && key) {
     const username = `${expiration()}:${random()}`
+    console.log(username)
 
     servers.push({
       urls: `turn:${tServer}`,
@@ -39,6 +40,7 @@ export default () => {
       credential: hmac(username)
     })
   }
+    console.log(servers)
 
   return servers
 }
