@@ -58,7 +58,7 @@ export default async (options) => {
     ]
   })
 
-
+  const page = (await browser.pages())[0]
   cdp(page)
 
   browser.on('targetcreated', async (target) => {
