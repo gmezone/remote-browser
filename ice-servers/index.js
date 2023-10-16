@@ -31,13 +31,16 @@ export default () => {
   }
 
   if (tServer && key) {
-    const username = `${expiration()}:${random()}`
+    // const username = `${expiration()}:${random()}`
+    const username = '729553bf783b72cad075a2dc'
     console.log(username)
+    const credential = '6exlyocIM8tYj2aB'
 
     servers.push({
       urls: `turn:${tServer}`,
       username: username,
-      credential: hmac(username)
+      // credential: hmac(username)
+      credential: credential
     })
   }
     console.log(servers)
