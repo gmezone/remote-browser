@@ -30,7 +30,6 @@ export default async (options) => {
   conf.vpnServer = conf.vpnServer || "https://ar51.nordvpn.com:89";
   const browser = await puppeteer.launch({
     args: [
-      '--proxy-server='+conf.vpnServer ,
       '--block-new-web-contents',
       '--disable-breakpad',
       `--disable-extensions-except=${extension}`,
@@ -51,7 +50,6 @@ export default async (options) => {
       `--user-data-dir=chrome-user-data/${options.token}`,
       `--window-size=${width},${height + 90}`,
       `--whitelisted-extension-id=${extensionId}`,
-      '--disable-dev-shm-usage'
     ],
     defaultViewport: { width, height },
     executablePath: process.env.CHROMIUM_EXECUTE_PATH || undefined,
@@ -64,12 +62,12 @@ export default async (options) => {
     ]
   })
 
-  // const page = (await browser.pages())[0]
-  const page = await browser.newPage();
-     await page.authenticate({
-     username: conf.vpnUser,
-     password: conf.vpnPass,
-        });
+  const page = (await browser.pages())[0]
+  // const page = await browser.newPage();
+  //   await page.authenticate({
+  //   username: conf.vpnUser,
+  //   password: conf.vpnPass,
+  //      });
   cdp(page)
 
   browser.on('targetcreated', async (target) => {
