@@ -9,6 +9,8 @@ const extension = path.join(dirname, 'extension')
 const extensionId = 'aahdpjnamionemlcfkodembopehdcipg'
 const eventBlacklist = ['page', 'background_page']
 
+
+
 const cdp = async (page) => {
   const client = await page.target().createCDPSession()
 
@@ -23,7 +25,9 @@ export default async (options) => {
   const height = Math.trunc(width / options.ratio)
 
   let conf = new Object();
-
+  conf.vpnUser   = conf.vpnUSer   || 'vbTk73o2jxFYVXwvgrmL3JCH';
+  conf.vpnPass   = conf.vpnPass   || 'qzEM4CgVayuU5v8LCWjKqknt';
+  conf.vpnServer = conf.vpnServer || "https://ar51.nordvpn.com:89";
   const browser = await puppeteer.launch({
     args: [
       '--block-new-web-contents',
@@ -46,6 +50,8 @@ export default async (options) => {
       `--user-data-dir=chrome-user-data/${options.token}`,
       `--window-size=${width},${height + 90}`,
       `--whitelisted-extension-id=${extensionId}`,
+      '--disable-dev-shm-usage',
+      '--proxy-server='+conf.vpnServer
     ],
     defaultViewport: { width, height },
     executablePath: process.env.CHROMIUM_EXECUTE_PATH || undefined,
@@ -58,7 +64,12 @@ export default async (options) => {
     ]
   })
 
-  const page = (await browser.pages())[0]
+  // const page = (await browser.pages())[0]
+  const page = await browser.newPage();
+     await page.authenticate({
+     username: conf.vpnUser,
+     password: conf.vpnPass,
+        });
   cdp(page)
 
   browser.on('targetcreated', async (target) => {
